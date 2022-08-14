@@ -64,6 +64,7 @@ public class Family {
                 i++;
             }
         }
+        System.out.println("Child was deleted");
         children = newChildren;
         return children;
     }
@@ -78,6 +79,7 @@ public class Family {
                     j++;
                 }
             }
+            System.out.println("Child was deleted");
             children = newChildren;
         } else {
             throw new IndexOutOfBoundsException("there is no child");
