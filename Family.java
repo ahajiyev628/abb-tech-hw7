@@ -41,34 +41,46 @@ public class Family {
     }
 
     public ArrayList<Human> addChild(Human child) {
-        children.add(child);
+        ArrayList<Human> newChildren = new ArrayList<>();
+        newChildren.add(children.size(), child);
         System.out.println("Child was added");
-        System.out.println(child.toString());
+        this.children = newChildren;
         return children;
     }
 
+    /*public Human addChild(Human child) {
+        ArrayList<Human> newChildren = new ArrayList<>();
+        newChildren.add(children.size(), child);
+        this.children = newChildren;
+        return newChildren.get(newChildren.size()-1);
+    }
+    */
     public ArrayList<Human> deleteChild(Human child) {
-        ArrayList<Human> deletedChildren = new ArrayList<>();
-        for (Human deletedChild : children) {
-            if (!deletedChild.equals(child)) {
-                deletedChildren.add(deletedChild);
+        int i = 0;
+        ArrayList<Human> newChildren = new ArrayList<>();
+        for (Human ch : children) {
+            if (!ch.equals(child)) {
+                newChildren.set(i, ch);
+                i++;
             }
         }
-        children = deletedChildren;
+        children = newChildren;
         return children;
     }
 
     public ArrayList<Human> deleteChild(int position) {
-        if (position > 0) {
-            ArrayList<Human> deletedChildren = new ArrayList<>();
+        int j = 0;
+        if (position >= 0) {
+            ArrayList<Human> newChildren = new ArrayList<>();
             for (int i = 0; i < children.size(); i++) {
                 if (position != i) {
-                    deletedChildren.add(children.get(i));
+                    newChildren.set(j, children.get(i));
+                    j++;
                 }
             }
-            children = deletedChildren;
+            children = newChildren;
         } else {
-            throw new IndexOutOfBoundsException("No child in the family");
+            throw new IndexOutOfBoundsException("there is no child");
         }
         return children;
     }
