@@ -36,6 +36,8 @@ public class Main {
         ArrayList<Human> childs = family.addChild(child);
         for(Human ch : childs) System.out.println(ch.toString());
 
+        // family.deleteChild(0);
+
         DomesticCat dc = new DomesticCat(AnimalSpecies.DomesticCat, "wimel", 10, 50, new String[]{"eat", "play"});
         System.out.println(dc.describePet());
 
