@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -30,8 +32,9 @@ public class Main {
         child.setFather(new Human(father.getName(), father.getSurname()));
         child.setMother(new Human(mother.getName(), mother.getSurname()));
         child.setSchedule(new String[][]{{String.valueOf(DayOfWeek.Saturday)}, {Human.tasks[6]}});
-        
-        family.addChild(child);
+
+        ArrayList<Human> childs = family.addChild(child);
+        for(Human ch : childs) System.out.println(ch.toString());
 
         DomesticCat dc = new DomesticCat(AnimalSpecies.DomesticCat, "wimel", 10, 50, new String[]{"eat", "play"});
         System.out.println(dc.describePet());
