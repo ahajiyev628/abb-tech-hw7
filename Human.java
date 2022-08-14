@@ -9,7 +9,7 @@ public class Human {
     private Pet pet;
     private Human mother;
     private Human father;
-    private String[][] schedule = new String[7][2];
+    private String[] schedule = new String[7];
 
     public Human getMother() {
         return mother;
@@ -35,11 +35,11 @@ public class Human {
         this.pet = pet;
     }
 
-    public String[][] getSchedule() {
+    public String[] getSchedule() {
         return schedule;
     }
 
-    public void setSchedule(String[][] schedule) {
+    public void setSchedule(String[] schedule) {
         this.schedule = schedule;
     }
 
@@ -85,7 +85,7 @@ public class Human {
 
     }
 
-    public Human(String name, String surname, int year, int iq, Pet pet, Human mother, Human father, String[][] schedule) {
+    public Human(String name, String surname, int year, int iq, Pet pet, Human mother, Human father, String[] schedule) {
         this.name = name;
         this.surname = surname;
         this.year = year;
@@ -121,14 +121,6 @@ public class Human {
 
     public Human(String surname) {
         this.surname = surname;
-    }
-
-    public static String tLevel(int a) {
-        if (a > 50) {
-            return "very sly";
-        } else {
-            return "almost not sly";
-        }
     }
 
     public String greetPet() {
