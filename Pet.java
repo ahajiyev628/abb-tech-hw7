@@ -1,7 +1,6 @@
 import java.util.Arrays;
 
 public abstract class Pet {
-    int TrickLevel;
     private AnimalSpecies species = AnimalSpecies.UNKNOWN;
     private String nickname;
     private int age;
@@ -90,6 +89,6 @@ public abstract class Pet {
     }
 
     public String describePet() {
-        return "I have a " + species + ", he is " + age + " years old, he is " + Human.tLevel(TrickLevel);
+        return "I have a " + species + ", he is " + age + " years old, he is " + tLevel(this.getTricklevel());
     }
 }
