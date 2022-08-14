@@ -39,13 +39,13 @@ public class Main {
         DomesticCat dc = new DomesticCat(AnimalSpecies.DomesticCat, "wimel", 10, 50, new String[]{"eat", "play"});
         System.out.println(dc.describePet());
 
-        RoboCat rc = new RoboCat(AnimalSpecies.DomesticCat, "wimel", 10, 50, new String[]{"eat", "play"});
+        RoboCat rc = new RoboCat(AnimalSpecies.ROBOCAT, "wimel", 10, 50, new String[]{"eat", "play"});
         System.out.println(rc.describePet());
 
-        Fish f = new Fish(AnimalSpecies.DomesticCat, "wimel", 10, 50, new String[]{"eat", "play"});
+        Fish f = new Fish(AnimalSpecies.FISH, "wimel", 10, 50, new String[]{"eat", "play"});
         System.out.println(f.describePet());
 
-        Dog dg = new Dog(AnimalSpecies.DomesticCat, "wimel", 10, 50, new String[]{"eat", "play"});
+        Dog dg = new Dog(AnimalSpecies.DOG, "wimel", 10, 50, new String[]{"eat", "play"});
         System.out.println(dg.describePet());
 
         System.out.print("Count of members in the family: " + family.countFamily());
